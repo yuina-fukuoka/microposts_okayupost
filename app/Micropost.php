@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Micropost extends Model
 {
-    //add chapoter9
+    //add chapter9
     protected $fillable = ['content', 'user_id'];
 
     public function user()
