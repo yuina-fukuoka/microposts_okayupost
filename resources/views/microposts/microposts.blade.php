@@ -1,3 +1,5 @@
+
+
 <ul class="media-list">
 @foreach ($microposts as $micropost)
     <?php $user = $micropost->user; ?>
@@ -18,6 +20,9 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
+            </div>
+             <div>
+                @include('user_favorites.favorites_button', ['user' => $user])
             </div>
         </div>
     </li>

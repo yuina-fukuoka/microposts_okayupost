@@ -43,10 +43,12 @@ class UsersController extends Controller
     //original function
     public function index()
     {
+        $user = \Auth::user();
         $users = User::paginate(10);
         
         return view('users.index', [
             'users' => $users,
+            'user' => $user,
         ]);
     }
     
@@ -64,5 +66,26 @@ class UsersController extends Controller
 
         return view('users.show', $data);
     }
+    
+    //favorite
+    public function favorings($id)
+    {
+        $user = User::find($id);
+        
+        $favorings = $user->favorings()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            
+            'microposts' => $favorings,
+        ];
+
+        $data += $this->counts($user);
+
+        return view('users.favorings', $data);
+    }
+
+    
+   
 }
 
