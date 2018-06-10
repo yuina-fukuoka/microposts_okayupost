@@ -14,15 +14,17 @@
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
             </div>
-            <div>
-                @if (Auth::user()->id == $micropost->user_id)
-                    {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                    {!! Form::close() !!}
-                @endif
-            </div>
-             <div>
-                @include('user_favorites.favorites_button', ['user' => $user])
+            <div class="btn-horizontal">
+                 <div class='btn-group'>
+                    @include('user_favorites.favorites_button', ['user' => $user])
+                </div>
+                <div class='btn-group'>
+                    @if (Auth::user()->id == $micropost->user_id)
+                        {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                        {!! Form::close() !!}
+                    @endif
+                </div>
             </div>
         </div>
     </li>

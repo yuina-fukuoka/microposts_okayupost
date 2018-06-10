@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Microposts</a>
+                <a class="navbar-brand" href="/">OkayuPost</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -18,8 +18,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <!--navbar保留-->
-                                <li>{!! link_to_route('users.show', 'My Profile',['id'=>$user->id]) !!}</li>
-                                <li><a href="#">Favorites</a></li>
+                                <li class='form-group'> <span class='glyphicon glyphicon-user'> {!! link_to_route('users.show', 'My Profile',['id'=>\Auth::user()->id]) !!}</span></li>
+                                <li class='form-group'> <span class='glyphicon glyphicon-heart'> {!! link_to_route('users.favorings', 'My Favorites',['id'=>\Auth::user()->id]) !!}</span></li>
                                 <li role="separator" class="divider"></li>
                                 <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
                             </ul>
@@ -27,6 +27,8 @@
                     @else
                         <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
                         <li>{!! link_to_route('login', 'Login') !!}</li>
+                        
+
                     @endif
                 </ul>
             </div>

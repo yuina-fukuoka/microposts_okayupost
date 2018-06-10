@@ -28,14 +28,14 @@ class User extends Authenticatable
     ];
     
     
-    //add chapter9
+    //add chapter9////////////////////////////////////////////////////////////////////
      public function microposts()
     {
         return $this->hasMany(Micropost::class);
     }
     
     
-    //follower funstion(not user)
+    //follower funstion//////////////////////////////////////////////////////////////
       public function followings()
     {
         return $this->belongsToMany(User::class, 'user_follow', 'user_id', 'follow_id')->withTimestamps();
@@ -88,7 +88,7 @@ class User extends Authenticatable
         return $this->followings()->where('follow_id', $userId)->exists();
     }
     
-    //timeline function
+    //timeline function/////////////////////////////////////////////////////////////////////
     public function feed_microposts()
     {
         $follow_user_ids = $this->followings()-> pluck('users.id')->toArray();
