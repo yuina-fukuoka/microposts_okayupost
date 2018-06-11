@@ -15,8 +15,8 @@
         
         <style>
         .title {
-            width: 15px;
-            height: 15px;
+            width: 50px;
+            height: 50px;
             }
             
         .statement {
