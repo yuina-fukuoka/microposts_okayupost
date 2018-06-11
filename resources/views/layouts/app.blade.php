@@ -12,6 +12,18 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <style>
+        .title {
+            width: 15px;
+            height: 15px;
+            }
+            
+        .statement {
+            font-size: 30px;
+            text-align: center;
+        }
+        </style>
     </head>
     <body>
         @include('commons.navbar')
