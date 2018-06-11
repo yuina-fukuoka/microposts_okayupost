@@ -16,7 +16,7 @@
             <div class="text-center">
                 <h1>
                     Welcome to OkayuPost
-                    <img src="{{ asset('/microposts/okayupost_icon.png') }}" alt="icon">
+                    <img src="{{ asset('okayupost_icon.png') }}" alt="icon">
                 </h1>
                 {!! link_to_route('signup.get', 'Sign up now !', null, ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
